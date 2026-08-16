@@ -9,7 +9,7 @@ import { motion } from 'motion/react'
 const HeroSection = () => {
     return (
         <>
-            <main id='home' className='w-full h-[calc(100vh-80px)] flex items-center overflow-hidden'>
+            <main id='home' className='w-full h-[calc(100vh-80px)] flex items-center overflow-hidden mt-20'>
                 <section className='flex flex-col items-start gap-3 w-1/2 pl-10'>
                     <motion.span
                         initial={{ opacity: 0, x: -30 }}
