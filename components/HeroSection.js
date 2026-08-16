@@ -46,7 +46,7 @@ const HeroSection = () => {
                     viewport={{ once: false }}
                     className="relative w-1/2 h-full">
                     <Image
-                        src="/hero-section.jpg"
+                        src="/hero-section.webp"
                         alt="Luxury property"
                         fill
                         sizes='1200px'
