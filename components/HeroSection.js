@@ -9,31 +9,31 @@ import { motion } from 'motion/react'
 const HeroSection = () => {
     return (
         <>
-            <main className='w-full h-[calc(100vh-80px)] flex items-center overflow-hidden'>
+            <main id='home' className='w-full h-[calc(100vh-80px)] flex items-center overflow-hidden'>
                 <section className='flex flex-col items-start gap-3 w-1/2 pl-10'>
                     <motion.span
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.95, delay: 0.1 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className='uppercase'>Where Luxury Meets Location</motion.span>
                     <motion.h1
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.95, delay: 0.2 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className='font-bold text-3xl lg:text-8xl'>Find Your Dream House, <br />Effortlessly</motion.h1>
                     <motion.p
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.95, delay: 0.3 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                         className='max-w-xl'>Discover premium properties tailored to your lifestyle. From cozy apartments to luxury villas, we connect you with verified listings, expert agents, and a seamless buying experience — all in one place.</motion.p>
                     <motion.span
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.95, delay: 0.4 }}
-                        viewport={{ once: false }}
+                        viewport={{ once: true }}
                     >
                         <Button text={'Explore Properties'} />
                     </motion.span>
@@ -43,7 +43,7 @@ const HeroSection = () => {
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.95, delay: 0.1 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     className="relative w-1/2 h-full">
                     <Image
                         src="/hero-section.webp"
