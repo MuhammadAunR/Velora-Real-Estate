@@ -2,8 +2,8 @@ const navOptions = [
     { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Contact Us', href: '#contact' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
 ]
 export { navOptions }
 
