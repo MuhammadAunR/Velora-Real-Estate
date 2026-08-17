@@ -8,7 +8,7 @@ import { MessageCircle } from 'lucide-react'
 
 const NavDrawer = () => {
 
-    const { isNavOpen, toggleNavDrawer, activeNavbar, setActiveNavbar } = useNavbar()
+    const { isNavOpen, toggleNavDrawer, activeNavbar, setActiveNavbar, handleNavClick } = useNavbar()
     useBlockYScroll(isNavOpen)
 
     return (
@@ -26,7 +26,7 @@ const NavDrawer = () => {
                 )}
             </AnimatePresence>
 
-            <aside className={`h-screen w-100 top-20 bg-primary fixed z-200 px-10 py-15 transition-all ease-linear duration-300 lg:hidden
+            <aside className={`h-screen w-100 top-15 bg-primary fixed z-200 px-10 py-15 transition-all ease-linear duration-300 lg:hidden
                 ${isNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <ul className='flex flex-col items-start justify-center gap-7'>
                     {navOptions.map((option, index) => {
@@ -38,7 +38,7 @@ const NavDrawer = () => {
                             key={index}
                             href={option.href}
                             onClick={() => {
-                                setActiveNavbar(option.label.toLowerCase());
+                                handleNavClick(option.href.slice(1));
                                 toggleNavDrawer();
                             }}
                             className={`text-2xl font-semibold hover:text-accent transition-all ease-linear duration-300 cursor-pointer relative select-none outline-none

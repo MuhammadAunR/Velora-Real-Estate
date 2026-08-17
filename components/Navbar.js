@@ -9,15 +9,9 @@ import Link from 'next/link'
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false)
-    const { activeNavbar, setActiveNavbar } = useNavbar()
+    const { activeNavbar, setActiveNavbar, isClickScrolling, handleNavClick } = useNavbar()
 
-    useEffect(() => {
-        const target = document.getElementById(activeNavbar)
-        if (target && window.lenis) {
-            window.lenis.scrollTo(target, { offset: -80 })
-        }
-    }, [activeNavbar])
-
+    // Use to stretch the navbar height on scroll
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -30,6 +24,41 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    // Scroll to target section as activeNavbar changes on click
+    useEffect(() => {
+        const target = document.getElementById(activeNavbar)
+        if (!target || !window.lenis) return
+
+        const offset = activeNavbar === 'home' ? -100 : -20
+        window.lenis.scrollTo(target, { offset })
+    }, [activeNavbar])
+
+    // Detect the section and changes the activeNav accordingly
+    useEffect(() => {
+        const sectionIds = navOptions.map(option => option.href.slice(1))
+        const options = {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px',
+            threshold: 0,
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (isClickScrolling.current) return
+                if (entry.isIntersecting) {
+                    setActiveNavbar(entry.target.id)
+                }
+            })
+        }, options)
+
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id)
+            if (el) {
+                observer.observe(el)
+            }
+        });
+        return () => observer.disconnect()
+    }, [])
 
     return (
         <nav className={`flex items-center justify-between bg-primary px-7 fixed z-100 w-full transition-all ease-linear duration-300 ${isScrolled ? 'py-5' : 'py-6'}`}>
@@ -39,7 +68,7 @@ const Navbar = () => {
                     return <a
                         key={index}
                         href={option.href}
-                        onClick={() => setActiveNavbar(option.label.toLowerCase())}
+                        onClick={() => handleNavClick(option.href.slice(1))}
                         className={`text-lg hover:text-accent transition-all ease-linear duration-300 cursor-pointer relative select-none outline-none
                             ${activeNavbar === option.label.toLowerCase() ? 'text-accent' : 'text-secondary'}`}
                     >
