@@ -1,9 +1,10 @@
 'use client'
-import { navOptions } from '@/constants/NavOptions'
+import { navOptions, whatsappConsultationLink } from '@/constants/Data'
 import { useNavbar } from '@/context/NavbarContext'
 import { motion, AnimatePresence } from 'motion/react'
 import React from 'react'
 import useBlockYScroll from '../hooks/BlockYScroll'
+import { MessageCircle } from 'lucide-react'
 
 const NavDrawer = () => {
 
@@ -25,7 +26,7 @@ const NavDrawer = () => {
                 )}
             </AnimatePresence>
 
-            <aside className={`h-[calc(100%-80px)] w-110 bg-primary top-20 absolute z-100 px-10 py-15 transition-all ease-linear duration-300 lg:hidden
+            <aside className={`h-screen w-100 top-20 bg-primary fixed z-200 px-10 py-15 transition-all ease-linear duration-300 lg:hidden
                 ${isNavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <ul className='flex flex-col items-start justify-center gap-7'>
                     {navOptions.map((option, index) => {
@@ -51,6 +52,21 @@ const NavDrawer = () => {
                         </motion.a>
                     })}
                 </ul>
+
+                <div className='my-15'>
+                    <motion.a
+                        href={whatsappConsultationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={toggleNavDrawer}
+                        whileTap={{ scale: 0.95 }}
+                        className='relative bg-secondary flex items-center py-3 px-12 border-2 border-primary text-primary rounded-full cursor-pointer text-lg font-bold uppercase hover:border-secondary hover:bg-primary hover:text-secondary transition-colors ease-linear duration-300 overflow-hidden group'>
+                        <span className='-translate-x-5'>
+                            Book A Consultation
+                        </span>
+                        <span className='absolute right-7'><MessageCircle /></span>
+                    </motion.a>
+                </div>
             </aside>
         </>
     )
