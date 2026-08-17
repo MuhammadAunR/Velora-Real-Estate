@@ -2,6 +2,7 @@ import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import NavbarContext from "@/context/NavbarContext";
 import LenisWrapper from "@/components/LenisWrapper";
+import ReactHotToastWrapper from "@/components/ReactToastifyWrapper";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <LenisWrapper>
           <NavbarContext>
-            {children}
+            <ReactHotToastWrapper>
+              {children}
+            </ReactHotToastWrapper>
           </NavbarContext>
         </LenisWrapper>
       </body>

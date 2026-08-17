@@ -1,0 +1,25 @@
+import React from 'react'
+import { Slide, ToastContainer } from 'react-toastify'
+
+const ReactToastContainer = ({ children }) => {
+    return (
+        <>
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="dark"
+                transition={Slide}
+            />
+            {children}
+        </>
+    )
+}
+
+export default ReactToastContainer
