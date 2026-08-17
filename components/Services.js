@@ -32,7 +32,7 @@ const Services = () => {
     ]
     return (
         <>
-            <main id='services' className='min-h-screen h-fit w-full bg-radial from-secondary/50 to-white'>
+            <main id='services' className='min-h-screen h-fit w-full bg-radial from-secondary/50 to-white px-10'>
 
                 <section>
                     <SectionHeader
@@ -74,7 +74,7 @@ const Services = () => {
                     </div>
                 </section>
 
-                <section className='flex flex-col lg:flex-row items-center justify-between gap-x-10 gap-y-5 py-15 max-lg:px-5 lg:w-10/12 mx-auto'>
+                <section className='flex flex-col lg:flex-row items-center justify-between gap-x-10 gap-y-5 py-15 lg:w-10/12 mx-auto'>
                     <motion.div
                         initial={{ opacity: 0, filter: 'blur(10px)' }}
                         whileInView={{ opacity: 1, filter: 'blur(0px)' }}
