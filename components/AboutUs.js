@@ -11,7 +11,7 @@ const stats = [
 
 const AboutUs = () => {
     return (
-        <section id='about' className='overflow-hidden pb-20 px-10'>
+        <section id='about' className='overflow-hidden pb-20 px-5 lg:px-10 min-h-screen h-fit'>
             <SectionHeader
                 label='About Us'
                 heading={'Guiding You Home,One Address at a Time'}

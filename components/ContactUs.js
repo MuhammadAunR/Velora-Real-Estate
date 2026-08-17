@@ -62,7 +62,7 @@ const ContactUs = () => {
     return (
 
         <>
-            <main id='contact' className='pb-20 px-10'>
+            <main id='contact' className='pb-10 px-5 lg:px-10 min-h-screen h-fit'>
                 <SectionHeader
                     label={'Contact Us'}
                     heading={"We\'d Love To, Hear From You"}
