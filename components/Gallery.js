@@ -22,7 +22,7 @@ const Gallery = () => {
           description={"Every property tells a story. Here's a look at some of the addresses we're proud to represent."}
         />
 
-        <section className='px-10'>
+        <section className='px-5 lg:px-10'>
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 max-w-6xl mx-auto mt-14'>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
