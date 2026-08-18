@@ -32,7 +32,7 @@ const Services = () => {
     ]
     return (
         <>
-            <main id='services' className='min-h-screen h-fit w-full bg-radial from-secondary/50 to-white px-10'>
+            <main id='services' className='min-h-screen h-fit w-full bg-radial from-secondary/50 to-white px-5 lg:px-10'>
 
                 <section>
                     <SectionHeader
@@ -94,21 +94,21 @@ const Services = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.40 }}
                         viewport={{ once: true }}
-                        className='flex flex-col gap-5 w-full lg:w-1/2'>
+                        className='flex flex-col gap-7 lg:gap-10 w-full lg:w-1/2'>
                         <h1 className='text-4xl lg:text-6xl font-bold font-heading'>We Help You To <br />Find Your Dream Home</h1>
                         <p className='max-w-2xl'>From cozy cottages to luxurious estates, our dedicated team guides you through every step of the journey, ensuring your dream home becomes a reality</p>
-                        <div className='flex items-center justify-between'>
-                            <div className='flex flex-col items-start md:flex-wrap'>
-                                <span className='text-3xl leading-none font-bold'>8K+</span>
-                                <span>Houses Available</span>
+                        <div className='flex items-center justify-between gap-5 max-md:flex-wrap'>
+                            <div className='flex flex-col items-start'>
+                                <span className='text-3xl leading-none font-bold'>250+</span>
+                                <span>Properties Listed</span>
                             </div>
                             <div className='flex flex-col items-start'>
-                                <span className='text-3xl leading-none font-bold'>8K+</span>
-                                <span>Houses Available</span>
+                                <span className='text-3xl leading-none font-bold'>850+</span>
+                                <span>Properties Sold</span>
                             </div>
                             <div className='flex flex-col items-start'>
-                                <span className='text-3xl leading-none font-bold'>8K+</span>
-                                <span>Houses Available</span>
+                                <span className='text-3xl leading-none font-bold'>8+</span>
+                                <span>Years of Experience</span>
                             </div>
                         </div>
                     </motion.div>
